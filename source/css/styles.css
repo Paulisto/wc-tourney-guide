@@ -1,0 +1,307 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+#website-logo {
+    position: absolute;
+    left: 30px;
+    top: 16px;
+    width: 100px;
+}
+
+.navbar-brand{
+    height: 50px;
+}
+
+nav ul, aside ul {
+	list-style-type: none;
+}
+
+
+nav ul {
+	padding: 0;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+
+nav ul li {
+	float: left;
+}
+
+nav ul li a, aside ul a {
+    text-decoration: none;
+}
+
+nav ul li a {
+	display: block;
+	text-align: center;
+    font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+    text-transform: uppercase;
+	padding: 14px 16px;
+    color: white;
+}
+
+nav ul li a:hover {
+    color: black;
+    background-color: rgb(65, 251, 28);
+}
+nav ul li a:active {
+    background-color: #cfeb1b;
+    color: black;
+}
+
+h1, h2, h3{
+    font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+}
+
+#hero {
+    position: relative;
+    height: 450px;
+    background-image: url('../images/fifa-world-cup-trionda-ball.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#hero .mask {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#hero .mask h1 {
+    font-size: 48px;
+}
+
+.cards {
+    display: grid;
+    place-items: center;
+    margin: 2rem auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 150px;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    border: 1px solid black;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card .footer {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.card a {
+    display: inline;
+	padding: 12px 24px;
+	color: white;
+    outline-color: transparent;
+    line-height: 3;
+    text-decoration: none;
+}
+
+.card a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.card .team-guide-link {
+	background-color: #23c03d; 
+}
+
+.card .team-guide-link:hover {
+	background-color: #16912a;
+}
+
+.card .stadium-guide-link {
+	background-color: #2C72EA;
+}
+
+.card .stadium-guide-link:hover {
+	background-color:  #1952b3;
+}
+
+#team-guide-body, #stadium-guide-body{
+    display: flex;
+    flex-direction: row;
+}
+
+#team-guide-body aside, #stadium-guide-body aside{
+    flex: 0 0 300px;
+    height: 100vh;
+    overflow-y: auto; 
+    overflow-x: hidden;
+    background-color: rgba(65, 251, 28, 0.5)
+}
+
+#team-guide-body main, #stadium-guide-body main{
+    flex: 1 1 0%;
+    margin-left: 0.5rem;
+}
+
+#sidebar-searchbar {
+    display: block;
+    width: 270px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+aside ul {
+    padding-left: 0;
+}
+
+aside ul li {
+     padding: 8px 16px;
+}
+
+aside ul li a {
+    display: block;
+    color: black;
+    width: 100%;
+    padding: 8px 16px;       
+}
+
+aside ul a:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+#heading {
+    border-bottom: 0.5px solid gray;
+}
+
+#heading h2 {
+    font-size: 32px;
+}
+
+.host-badge {
+    background-color: blue;
+    border-radius: 10em;
+    font-size: 24px;
+    padding: 0.25rem;
+    color: white;
+}
+
+.champions-badge {
+    background-color: rgb(165, 143, 17);
+    border-radius: 10em;
+    font-size: 24px;
+    padding: 0.25rem;
+    color: white;
+}
+
+#stadium-heading h2 {
+    margin-left: 15px;
+    font-size: 32px;
+}
+
+#first-section, #details-section {
+    display: flex;
+    flex-direction: row;
+	padding-top: 10px;
+	margin-top: 1rem;
+}
+
+#first-section .col-1{
+    width: 75%;
+}
+
+
+#details-section #col-1 {
+	width: 60%
+}
+
+#details-section #col-2 {
+	width: 40%
+}
+
+#stadium-map {
+	width: 100%; 
+	height: 300px;
+}
+#group-detail-span, #country-detail-span {
+	display: inline;
+	border: 1px solid;
+	padding: 10px;
+	font-weight: bold;
+	border-radius: 50px;
+}
+
+#country-detail-span.can {
+	color: rgb(92, 48, 44);
+	border-color: rgb(92, 48, 44);
+	background-color: rgb(245, 177, 171);
+}
+
+#country-detail-span.us {
+	color: rgb(22, 18, 51);
+	border-color: rgb(22, 18, 51);
+	background-color: rgb(198, 192, 240);
+}
+
+#country-detail-span.mex {
+	color: rgb(44, 92, 50);
+	border-color: rgb(44, 92, 50);
+	background-color: rgb(115, 245, 131);
+}
+
+#stadium-heading {
+	position: relative;
+	height: 400px;
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#stadium-heading .mask {
+	background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-end;
+	
+}
+
+#stadium-heading .mask h1, span {
+	margin-left: 15px;
+}
+
+#stadium-heading span {
+	margin-bottom: 10px;
+}
+
