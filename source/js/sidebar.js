@@ -12,4 +12,8 @@ teamData.forEach(team => {
     teamItem.appendChild(teamLink);
 
     groupList.appendChild(teamItem);
+
+    if (teamLink.href === window.location.href) {
+		teamLink.classList.add("current-team")
+	}
 })

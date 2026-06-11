@@ -12,5 +12,8 @@ stadiumData.forEach(stadium => {
 
     stadiumItem.appendChild(stadiumLink);
 
+    if (stadiumLink.href === window.location.href) {
+		stadiumLink.classList.add("current-stadium")
+	}
     
 })

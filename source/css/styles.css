@@ -52,9 +52,15 @@ nav ul li a:hover {
     color: black;
     background-color: rgb(65, 251, 28);
 }
-nav ul li a:active {
+
+.current-page{
     background-color: #cfeb1b;
     color: black;
+}
+
+.current-stadium, .current-team {
+      background-color: black;
+      color: white
 }
 
 h1, h2, h3{
@@ -86,14 +92,40 @@ h1, h2, h3{
 
 #hero .mask h1 {
     font-size: 48px;
+	overflow: hidden;
+	border-right: .15em solid rgb(65, 251, 28); /* The typewriter cursor */
+	white-space: nowrap; /* Keeps the content on a single line */
+	animation: 
+    typing 3.5s steps(20, end),
+    blink-caret .5s step-end infinite;
 }
 
-.cards {
+/* The typing effext */
+@keyframes typing {
+	from { width: 0 }
+	to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(65, 251, 28) }
+}
+
+.cards, #stats-section {
     display: grid;
     place-items: center;
     margin: 2rem auto;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 150px;
+}
+
+#stats-section {
+    padding-top: 20px;
+}
+
+#stats-section .card {
+    border: none;
 }
 
 .card {
@@ -106,6 +138,17 @@ h1, h2, h3{
     align-items: center;
     justify-content: center;
     text-align: center;
+	animation: fadeIn 1.5s ease-in-out forwards;
+	animation-timeline: view();
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 .card .footer {
@@ -146,6 +189,17 @@ h1, h2, h3{
 
 .card .stadium-guide-link:hover {
 	background-color:  #1952b3;
+}
+
+#map-section {
+	padding: 16px 16px;
+	text-align: center;
+}
+
+#map {
+    height: 450px;
+	width: 750px;
+	margin: 0 auto;
 }
 
 #team-guide-body, #stadium-guide-body{

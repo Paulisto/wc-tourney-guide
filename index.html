@@ -6,6 +6,8 @@
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
 		crossorigin=""></script>
+		<script src="source/js/teamData.js"></script>
+		<script src="source/js/stadiumData.js"></script>
 	</head>
 	<body>
 		<header id="header">
@@ -42,9 +44,33 @@
 				</div>
 			</article>
 		</section>
-		<section>
+		<div>
+			<h2 style="text-align: center;">Summary</h2>
+		</div>
+		<section id="stats-section">
+			<article class="card">
+				<h1 id="debut-count"></h1>
+				<p>teams making their debut</p>
+			</article>
+			<article class="card">
+				<h1 id="qt2022count"></h1>
+				<p>teams that played in Qatar 2022</p>
+			</article>
+			<script>
+				const debutCount = teamData.filter(team => team.no_wc_past_appearances === 0).length;
+				
+				const qt2022count = teamData.filter(team => team.played_in_last_wc === "Yes").length;
+				
+				document.getElementById('debut-count').textContent = debutCount;
+				
+				document.getElementById("qt2022count").textContent = qt2022count;
+			</script>
+		</section>
+		<section id="map-section">
+			<h2>Stadiums</h2>
 			<div id="map">
 			</div>
 		</section>
+		<script src="source/js/map.js"></script>
 	</body>
 </html>
