@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const selectedTeam = teamData.find(
         team => team.name === selectedTeamName
     );
+	
+	// Find players belonging to the selected team
+	const selectedPlayers = playerData.filter(
+	  player => player.country === selectedTeam.name
+	);
 
     document.title = `${selectedTeam.name} - Team guide`;
 
@@ -24,15 +29,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const nicknames = Array.isArray(selectedTeam.nicknames)
     ? selectedTeam.nicknames
     : [selectedTeam.nicknames];
+	
+	const isCaptain = selectedPlayers.find(
+		player => player.is_captain === "Yes"
+	);
+
+	const captainMarkup = isCaptain
+		? `<p><b>Captain:</b> ${isCaptain.player_name}</p>`
+		: "";
 
     detailsSect.innerHTML += `
     <div class='col-1'>
         <span id="group-detail-span">Group ${selectedTeam.group}</span>
         <p><b>FIFA Ranking:</b> ${selectedTeam.fifa_ranking}</p>
         <p><b>Association:</b> ${selectedTeam.association}</p>
+		<p><b>FIFA Code:</b> ${selectedTeam.fifa_code}</p>
         <p><b>Confederation:</b> ${selectedTeam.confederation}</p>
         <p><b>${nicknames.length > 1 ? "Nicknames" : "Nickname"}:</b> ${nicknames.join(", ")}</p>
         <p><b>Coach:</b> ${selectedTeam.coach}</p>
+		${captainMarkup}
     </div>
     <div class='col-2'>
         <img src="${selectedTeam.assc_crest}" alt="${selectedTeam.association}" 
@@ -62,4 +77,36 @@ document.addEventListener("DOMContentLoaded", () => {
         `
         : `<p>${selectedTeam.name} will be making their debut this year.</p>`
     }`;
+	
+	const playersSect = document.getElementById('player-section')
+	
+	function formatPlayers(players, position) {
+		return players
+			.filter(player => player.position === position)
+			.map(player => {
+				// For players playing domestically
+				const clubInfo =
+                player.club_location &&
+                player.club_location !== selectedTeam.name
+                    ? `${player.club}, ${player.club_location}`
+                    : player.club;
+
+
+				return `${player.player_name} (${clubInfo})`;
+			});
+	}
+
+	// Groups players by position
+	const goalies = formatPlayers(selectedPlayers, "GK");
+	const defenders = formatPlayers(selectedPlayers, "DF");
+	const midfielders = formatPlayers(selectedPlayers, "MF");
+	const forwards = formatPlayers(selectedPlayers, "FW");
+	
+	playersSect.innerHTML += `
+	<h2>Squad</h2>
+	
+	<p><b>Goalkeepers:</b> ${goalies.join(", ")}</p>
+	<p><b>Defenders:</b> ${defenders.join(", ")}</p>
+	<p><b>Midfieldlers:</b> ${midfielders.join(", ")}</p>
+	<p><b>Forwards:</b> ${forwards.join(", ")}</p>`;
 });

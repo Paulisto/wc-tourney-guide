@@ -1,5 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
 }
 
 .navbar {
@@ -205,11 +206,12 @@ h1, h2, h3{
 #team-guide-body, #stadium-guide-body{
     display: flex;
     flex-direction: row;
+    height: 989.95px;
+    overflow: hidden;
 }
 
 #team-guide-body aside, #stadium-guide-body aside{
     flex: 0 0 300px;
-    height: 100vh;
     overflow-y: auto; 
     overflow-x: hidden;
     background-color: rgba(65, 251, 28, 0.5)
@@ -217,7 +219,8 @@ h1, h2, h3{
 
 #team-guide-body main, #stadium-guide-body main{
     flex: 1 1 0%;
-    margin-left: 0.5rem;
+    margin-left: 0.5rem;  
+    box-sizing: border-box;
 }
 
 #sidebar-searchbar {

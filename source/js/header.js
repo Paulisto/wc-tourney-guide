@@ -44,9 +44,6 @@ navLinks.forEach(navLink => {
 	a.textContent = navLink.name;
 	navItem.appendChild(a);
 
-	if (a.href === window.location.href) {
-		a.classList.add("current-page")
-	}
 	
 	navList.appendChild(navItem);
 	
