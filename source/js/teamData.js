@@ -14,6 +14,7 @@ const teamData = [
 		association: "Federación Mexicana de Fútbol (FMF)",
 		assc_crest: "https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/Mexico_national_football_team_crest.svg/330px-Mexico_national_football_team_crest.svg.png",
 		no_wc_past_appearances: 17,
+		debut: "",
 		wc_best_result: "Quarter-finals (1970, 1986)",
 		played_in_last_wc: "Yes",
 		last_wc_perf: "Group Stage" //Perfomance in Qatar 2022 
@@ -53,6 +54,7 @@ const teamData = [
 		association: "South African Football Association (SAFA)",
 		assc_crest: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e7/South_Africa_national_soccer_team_logo.svg/500px-South_Africa_national_soccer_team_logo.svg.png",
 		no_wc_past_appearances: 3,
+		debut: "France 1998",
 		wc_best_result: "Group stage (1998, 2002, 2010)",
 		played_in_last_wc: "No",
 		last_wc_app: "South Africa 2010",
@@ -340,7 +342,7 @@ const teamData = [
 		flag_icon: "fi fi-cw",
 		coach: "Dick Advocaat",
 		coach_nationality: "fi fi-nl",
-		fifa_code: "CUR",
+		fifa_code: "CUW",
 		are_hosts: "No",
 		confederation: "CONCACAF",
 		fifa_ranking: 82,
@@ -355,6 +357,7 @@ const teamData = [
 		group: "E",
 		flag_icon: "fi fi-ec",
 		coach: "Sebastián Beccacece",
+		coach_nationality: "fi fi-ar",
 		fifa_code: "ECU",
 		are_hosts: "No",
 		confederation: "CONMEBOL",
@@ -564,7 +567,7 @@ const teamData = [
 		group: "H",
 		flag_icon: "fi fi-sa",
 		coach: "Georgios Donis",
-		coach_nationality: "",
+		coach_nationality: "fi fi-gr",
 		fifa_code: "KSA",
 		are_hosts: "No",
 		confederation: "AFC",
@@ -573,6 +576,7 @@ const teamData = [
 		fifa_ranking: 61,
 		nicknames: ["الأخضر (al-'Akhḍar, 'The Green One')","الصقور العربية (as-Suqūr Al-‘Arabiyyah, 'Arabian Falcons')","الصقور الخضر (as-Suqūr al-Khoḍur, 'The Green Falcons')"],
 		no_wc_past_appearances: 6,
+		debut: "",
 		wc_best_result: "Round of 16 (1994)",
 		played_in_last_wc: "Yes",
 		last_wc_perf: "Group stage"
@@ -690,6 +694,7 @@ const teamData = [
 		no_wc_past_appearances: 3,
 		wc_best_result: "Quarter-finals (2002)",
 		played_in_last_wc: "Yes",
+		last_wc_perf: "Round of 16"
 	},
 	{
 		id: 37,

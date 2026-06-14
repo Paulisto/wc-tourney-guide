@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		<p><b>FIFA Code:</b> ${selectedTeam.fifa_code}</p>
         <p><b>Confederation:</b> ${selectedTeam.confederation}</p>
         <p><b>${nicknames.length > 1 ? "Nicknames" : "Nickname"}:</b> ${nicknames.join(", ")}</p>
-        <p><b>Coach:</b> ${selectedTeam.coach}</p>
+        <p><b>Coach:</b> ${selectedTeam.coach}<span class="${selectedTeam.coach_nationality} title="Coach's nationality"></span></p>
 		${captainMarkup}
     </div>
     <div class='col-2'>
